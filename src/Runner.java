@@ -39,8 +39,12 @@ public class Runner
 		newspaperCoords.add(new Coordinates(13,20));
 		newspaperCoords.add(new Coordinates(14,20));
 		newspaperCoords.add(new Coordinates(14,21));
-		//TODO UPDATE IMAGE FILES*******************************************************************************************
-		Image cafeteriaNewspaperImage = getImage("/images/wordsearch.png");
+		Image cafeteriaNewspaperImage = getImage("/images/cafeteriaNewspaperItem.png");
+		cafeteriaNewspaperImage = getScaledImage(cafeteriaNewspaperImage, 500, 500);
+		JFrame newspaperTaskFrame = new JFrame();
+		newspaperTaskFrame.setLayout(new BorderLayout());
+		//newspaperTaskFrame.add(new JLabel().setIcon(new Icon(cafeteriaNewspaperImage)), BorderLayout.CENTER);
+		Task cafeteriaNewspaperTask = new Task(newspaperTaskFrame, 600, cafeteriaNewspaperImage);
 		Item newspaper = new Item("newspaper", newspaperCoords, cafeteriaNewspaperImage);	
 
 		/*Wires: (4,2), (5,2)*/
@@ -85,10 +89,13 @@ public class Runner
 		Class<? extends JFrame> j = bsFrame.getClass();
 		Image image = tk.createImage(j.getResource(imageUrl));
 		return image;
-		//cafeteriaImage = cafeteriaImage.getScaledInstance(800, 800, Image.SCALE_DEFAULT);
-
-
 	}
+	
+	/*Returns a scaled instance of the img provided*/
+	public static Image getScaledImage(Image img, int width, int height) {
+		return img.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+	}
+	
 
 	public static void main(String[] args) throws MalformedURLException, IOException
 	{

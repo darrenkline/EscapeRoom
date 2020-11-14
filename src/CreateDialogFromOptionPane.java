@@ -17,6 +17,7 @@ public class CreateDialogFromOptionPane {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String name = JOptionPane.showInputDialog(parent, "What is your name?", null);
+                
             }
         });
     }

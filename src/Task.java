@@ -1,3 +1,5 @@
+import java.awt.Image;
+
 import javax.swing.JFrame;
 
 public class Task {
@@ -7,9 +9,12 @@ public class Task {
 	private boolean isComplete = false;
 	
 	/*Possibly add a layout parameter as well?*/
-	public Task (JFrame frame, int windowSize) {
+	public Task (JFrame frame, int windowSize, Image img) {
 		this.taskFrame = frame;
 		/*TODO initialize frame with specified window size*/
+		if (img != null) {
+			
+		}
 	}
 	
 	
