@@ -75,6 +75,50 @@ public class Runner
 		currentRoom = new Room(cafeteriaImage, cafeteriaItems, mainFrame, BUTTON_ROWS, BUTTON_COLS, invisibleButtons, testing);
 	}
 
+	public static void runMedbay() throws MalformedURLException, IOException {
+		/*Retrieve background image for cafeteria*/
+		Image medbayImage = getImage("/images/Medbay.png");
+		medbayImage = medbayImage.getScaledInstance(800, 800, Image.SCALE_DEFAULT);
+		
+		/*MedbayCovidPoster: (4,16), (5,16), (4,17), (5,17)*/
+		HashSet<Coordinates> covidPosterCoords = new HashSet<Coordinates>();
+		covidPosterCoords.add(new Coordinates(4,16));
+		covidPosterCoords.add(new Coordinates(5,16));
+		covidPosterCoords.add(new Coordinates(4,17));
+		covidPosterCoords.add(new Coordinates(5,17));
+		Image covidPosterImage = getImage("/images/MedbayCovidPoster.jpg");
+		Item covidPoster = new Item("CovidPoster", covidPosterCoords, covidPosterImage);
+
+		/*MedbayGel: (21,21),(21,22),(22,21),(22,22),(22,23)...*/
+		HashSet<Coordinates> medbayGelCoords = new HashSet<Coordinates>();
+		medbayGelCoords.add(new Coordinates(21,21));
+		medbayGelCoords.add(new Coordinates(21,22));
+		
+		medbayGelCoords.add(new Coordinates(22,21));
+		medbayGelCoords.add(new Coordinates(22,22));
+		medbayGelCoords.add(new Coordinates(22,23));
+		
+		medbayGelCoords.add(new Coordinates(23,22));
+		medbayGelCoords.add(new Coordinates(23,23));
+		
+		medbayGelCoords.add(new Coordinates(24,22));
+		medbayGelCoords.add(new Coordinates(24,23));
+		
+		medbayGelCoords.add(new Coordinates(25,22));
+		medbayGelCoords.add(new Coordinates(25,23));
+		
+		medbayGelCoords.add(new Coordinates(26,23));
+		Image medbayGelImage = getImage("/images/MedbayGel.jpg");
+		Item medbayGel = new Item("Gel", medbayGelCoords, medbayGelImage);
+
+		
+		HashSet<Item> medbayItems = new HashSet<Item>();
+		medbayItems.add(covidPoster);
+		medbayItems.add(medbayGel);
+		
+		currentRoom = new Room(medbayImage, medbayItems, mainFrame, BUTTON_ROWS, BUTTON_COLS, invisibleButtons, testing);
+	}
+		
 	
 	/*Initializes the newspaper, wires, and computer tasks for the cafeteria*/
 	public void initializeCafeteriaTasks() {
@@ -106,6 +150,13 @@ public class Runner
 		/*TODO Make a start screen, then call set visible, then call runCafeteria()*/  
 		mainFrame.setVisible(true);
 		runCafeteria();
+		mainFrame.setVisible(true);
+		mainFrame.dispose();
+		
+		mainFrame = new JFrame(); 
+		mainFrame.setSize(800,800);
+		mainFrame.setResizable(false);
+		runMedbay();
 		mainFrame.setVisible(true);
 	}
 
