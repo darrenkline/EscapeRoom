@@ -18,14 +18,6 @@ public abstract class Room {
 	private Task[][] taskGrid = new Task[NROWS][NCOLS];
 	private Room nextRoom;
 
-	/*Updates frame when we complete one room and move to the next*/
-	public void moveToNextRoom() {
-		/*TODO actually just do in runner*/
-		//update background photo
-		//clear items and images
-		//update new items and images and tasks
-	}
-
 	protected void setBackground(Image img) {
 		this.background = Util.toBufferedImage(img);
 	}
