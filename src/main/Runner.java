@@ -27,11 +27,11 @@ public class Runner {
 		initRooms();
 
 		mainFrame = new JFrame();
-		mainFrame.setSize(800, 800);
 		mainFrame.setResizable(false);
 		mainFrame.setVisible(true);
 		RoomPanel roomPanel = new RoomPanel(mainFrame, Runner.cafeteria);
 		mainFrame.add(roomPanel);
+		mainFrame.pack();
 		mainFrame.setVisible(true);
 	}
 

@@ -1,5 +1,6 @@
 package main;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
@@ -30,7 +31,7 @@ public class RoomPanel extends JPanel {
 
 		buttonGrid = new JButton[nrows][ncols];
 		this.setBackground(Color.white);
-		this.setPreferredSize(parentFrame.getSize());
+		this.setPreferredSize(new Dimension(800, 800));
 		this.setLayout(new GridLayout(nrows, ncols));
 
 		JFrame testWindow = new JFrame();
