@@ -16,18 +16,23 @@ public class MedbayRoom extends Room {
 
 		Task posterTask = new PosterTask();
 		this.addTask(posterTask,
+				new Coord(3,16),
 				new Coord(4,16),
 				new Coord(5,16),
+				new Coord(3,17),
 				new Coord(4,17),
 				new Coord(5,17)
 				);
 
 		Task gelTask = new GelTask();
 		this.addTask(gelTask,
+				new Coord(20,21),
+				new Coord(20,22),
+
 				new Coord(21,21),
 				new Coord(21,22),
+				new Coord(21,23),
 
-				new Coord(22,21),
 				new Coord(22,22),
 				new Coord(22,23),
 
@@ -35,12 +40,7 @@ public class MedbayRoom extends Room {
 				new Coord(23,23),
 
 				new Coord(24,22),
-				new Coord(24,23),
-
-				new Coord(25,22),
-				new Coord(25,23),
-
-				new Coord(26,23)
+				new Coord(24,23)
 				);
 	}
 

@@ -17,23 +17,26 @@ public class CafeteriaRoom extends Room {
 
 		Task newspaperTask = new NewspaperTask();
 		this.addTask(newspaperTask,
-				new Coord(14,19),
+				new Coord(13,19),
 				new Coord(13,20),
 				new Coord(14,20),
-				new Coord(14,21)
+				new Coord(12,20)
 				);
 
 		Task wireTask = new WireTask(newspaperTask);
 		this.addTask(wireTask,
+				new Coord(4,1),
+				new Coord(5,1),
 				new Coord(4,2),
 				new Coord(5,2)
+				
 				);
 
 		Task computerTask = new ComputerTask(wireTask);
 		this.addTask(computerTask,
+				new Coord(13,9),
 				new Coord(14,9),
-				new Coord(15,9),
-				new Coord(15,10)
+				new Coord(14,10)
 				);
 	}
 
